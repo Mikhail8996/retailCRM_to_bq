@@ -72,10 +72,14 @@ class Data_carrier():
     def extract_order_items(self, order_list):
         product_table =[]
         for order in order_list:
-            product_frame = {}
             for product in order['items']:
+                product_frame = {}
+                if order['id']==58:
+                    test=0
                 product_frame['orderId'] = order['id']
-                product_frame['id'] = product['id']
+                product_frame['id'] = product['offer']['id']
+                product_frame['productName'] = product['offer']['name']
+                product_frame['discountTotal'] = product['discountTotal']
                 product_frame['initialPrice'] = product['initialPrice']
                 product_frame['quantity'] = product['quantity']
                 product_frame['vatRate'] = product['vatRate']
