@@ -74,8 +74,7 @@ class Data_carrier():
         for order in order_list:
             for product in order['items']:
                 product_frame = {}
-                if order['id']==58:
-                    test=0
+                
                 product_frame['orderId'] = order['id']
                 product_frame['id'] = product['offer']['id']
                 product_frame['productName'] = product['offer']['name']
